@@ -1,0 +1,253 @@
+:root {
+  --clr-accent-400: hsl(178, 100%, 50%);
+
+  --clr-primary-mainBG-400: hsl(216, 50%, 16%);
+  --clr-primary-cardBG-300: hsl(216, 50%, 16%);
+  --clr-primary-200: hsl(215, 32%, 27%);
+  --clr-primary-100: hsl(215, 51%, 70%);
+  --clr-primary-50: rgb(12, 19, 31);
+
+  --clr-neutral-400: hsl(0, 0%, 100%);
+
+  --ff-primary: 'Outfit', sans-serif;
+
+  --ff-body: var(--ff-primary);
+
+  --fw-regular: 300;
+  --fw-semi-bold: 400;
+  --fw-bold: 600;
+
+  --fs-300: 1.125rem;
+  --fs-400: 1.5rem;
+  --fs-500: 2rem;
+
+
+  --fs-price-caption: var(--fs-300);
+  --fs-heading: var(--fs-400);
+
+  --size-25: .6rem;
+  --size-30: 1rem;
+  --size-50: 1.5rem;
+  --size-80: 2rem;
+  --size-100: 3rem;
+  --size-200: 6.25rem;
+}
+
+/* Basic css to have in all projects */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Removing default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  /* Removing default header styles */
+}
+
+/* set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;   
+}
+
+/* set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Elements that dont have a class get default*/
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with and removes space between images*/
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transition and smooth*/
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+      scroll-behavior: auto;
+  }
+}
+
+*,
+*::before,
+*::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/*Styling*/
+
+.preview-card {
+  --max-width: 340px;
+  --preview-card-padding: 1rem;
+
+
+  width: min(var(--max-width), 100% - var(--preview-card-padding)*2);
+  margin-inline: auto;
+  padding: var(--size-50);
+  border-radius: var(--size-25);
+  box-shadow: -.2em .2em 2em 1em var(--clr-primary-50);
+}
+
+.margin-auto{
+  margin-inline: auto;
+  padding: var(--size-50);
+  border-radius: var(--size-25);
+}
+.img-wrapper {
+
+  max-height: 250px;
+
+
+  position: relative;
+}
+
+.img-wrapper, .img-wrapper .equil-img, .img-wrapper .view{
+  border-radius: var(--size-25);
+}
+
+.img-wrapper:hover .view {
+  top: 0;
+  cursor: pointer; 
+}
+
+.img-wrapper:hover .view-img {
+  display: block;
+}
+
+
+.img-wrapper .view{
+  background: rgba(0, 255, 247, .5);
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-img{
+margin: auto;
+display: none;
+}
+
+h1:hover, span:hover {
+  color: var(--clr-accent-400);
+  cursor: pointer;
+}
+
+p[data-width="wide"] {
+  min-width: 15ch;
+  margin-bottom: var(--size-30);
+}
+
+.even-column{
+display: grid;
+grid-template-columns: auto auto;
+justify-content: space-between;
+}
+
+
+/*General styling*/
+body{
+  font-family: var(--ff-body);
+}
+
+p:not([class]) {
+  color: var(--clr-primary-100);
+  font-size: var(--fs-300);
+  opacity: .8;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--clr-neutral-400);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*Utility Classes*/
+.text-align{
+  text-align: center;
+}
+.text-accent-400 {
+  color: var(--clr-accent-400);
+}
+
+.text-primary-100 {
+  color: var(--clr-primary-100);
+}
+
+.text-neutral-400 {
+  color: var(--clr-neutral-400);
+}
+
+.bg-primary-mainBG-400 {
+  background-color: var(--clr-primary-mainBG-400);
+}
+
+.bg-primary-cardBG-300 {
+  background-color: var(--clr-primary-cardBG-300);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fs-heading {
+  font-size: var(--fs-heading);
+  /* line-height: 1.1; */
+}
+
+.fs-price-caption {
+  font-size: var(--fs-price-caption);
+  /* line-height: 1.1; */
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.padding-block-100 {
+  padding-block: var(--size-100);
+}
+
+.padding-block-200 {
+  padding-block: var(--size-200);
+}
+
+.padding-block-30 {
+  padding-block: var(--size-30);
+}
